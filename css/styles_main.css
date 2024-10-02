@@ -1,0 +1,266 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* Чтобы шапка была поверх всего */
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.logo p {
+    margin: 0;
+    font-size: 1rem;
+    color: #666;
+}
+
+.cart-icon {
+    width: 40px; /* Изменяй размер по желанию */
+    height: auto;
+}
+
+.cart-button {
+    background-color: #aa8110;
+    color: white;
+    border: none;
+    border-radius: 50%; /* Круглая кнопка */
+    width: 50px; /* Размер кнопки */
+    height: 50px; /* Размер кнопки */
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative; /* Для позиционирования счетчика */
+}
+
+.cart-button:hover {
+    transform: scale(1.05);
+    background-color: #554005;
+}
+
+/* Стили для счетчика */
+.cart-count {
+    position: absolute; /* Абсолютное позиционирование */
+    top: -5px; /* Положение сверху */
+    right: -5px; /* Положение справа */
+    background-color: red; /* Цвет фона */
+    color: white; /* Цвет текста */
+    border-radius: 50%; /* Круглая форма */
+    width: 20px; /* Ширина */
+    height: 20px; /* Высота */
+    display: flex; /* Flexbox для центрирования текста */
+    align-items: center; /* Центрирование по вертикали */
+    justify-content: center; /* Центрирование по горизонтали */
+    font-size: 0.8rem; /* Размер шрифта */
+    visibility: hidden; /* Скрыто по умолчанию */
+}
+
+.hero {
+    background-image: url('../images/BG.jpg'); 
+    height: 50vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    position: relative;
+    transition: transform 0.5s, opacity 0.5s; /* Плавные переходы */
+    will-change: transform, opacity;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+/* Контент */
+.content {
+    padding: 40px;
+    text-align: center;
+    z-index: 10;
+    position: relative;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.product-card {
+    display: inline-block;
+    background-color: rgb(212, 212, 212);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    margin: 20px;
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+}
+
+.product-card h3 {
+    font-size: 1.5rem;
+    margin: 15px 0;
+}
+
+.product-card p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.buy-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+.buy-button:hover {
+    background-color: #218838;
+}
+
+/* Стили модального окна */
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed; /* Оконное положение */
+    z-index: 1000; /* На переднем плане */
+    left: 0;
+    top: 0;
+    width: 100%; /* Полная ширина */
+    height: 100%; /* Полная высота */
+    overflow: auto; /* Добавить прокрутку, если необходимо */
+    background-color: rgb(0,0,0); /* Цвет фона */
+    background-color: rgba(0,0,0,0.4); /* Фон с прозрачностью */
+}
+
+/* Содержимое модального окна */
+.modal-content {
+    background-color: #fefefe; /* Цвет фона */
+    margin: 15% auto; /* Отступ сверху и по центру */
+    padding: 20px; /* Внутренний отступ */
+    border: 1px solid #888; /* Рамка */
+    width: 80%; /* Ширина */
+    border-radius: 10px; /* Скругление углов */
+}
+
+.close {
+    color: #aaa; /* Цвет закрывающей кнопки */
+    float: right; /* Правый флот */
+    font-size: 28px; /* Размер шрифта */
+    font-weight: bold; /* Жирный шрифт */
+}
+
+.close:hover,
+.close:focus {
+    color: black; /* Цвет при наведении */
+    text-decoration: none; /* Без подчеркивания */
+    cursor: pointer; /* Указатель при наведении */
+}
+
+/* Стили для полей ввода */
+.input-group {
+    margin: 10px 0; /* Отступ сверху и снизу */
+}
+
+.input-group label {
+    display: block; /* Каждую метку на новой строке */
+    margin-bottom: 5px; /* Отступ снизу */
+    color: white; /* Цвет текста */
+}
+
+.input-group input {
+    width: calc(100% - 20px); /* Уменьшаем ширину, чтобы оставить отступы */
+    padding: 10px; /* Внутренний отступ */
+    border: 1px solid #ccc; /* Цвет рамки */
+    border-radius: 5px; /* Скругление углов */
+    background-color: #f8f8f8; /* Цвет фона */
+    color: #333; /* Цвет текста */
+}
+
+/* Стили для кнопки заказа */
+.order-button {
+    margin-top: 20px; /* Отступ сверху */
+    padding: 10px 20px; /* Внутренний отступ */
+    background-color: #28a745; /* Цвет фона */
+    color: white; /* Цвет текста */
+    border: none; /* Без рамки */
+    border-radius: 5px; /* Скругление углов */
+    font-size: 1rem; /* Размер шрифта */
+    cursor: pointer; /* Указатель при наведении */
+    transition: background-color 0.3s; /* Плавный переход */
+}
+
+.order-button:hover {
+    background-color: #218838; /* Цвет фона при наведении */
+}
+
+.cart-header {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 0.5fr; /* Устанавливаем ширину колонок */
+    font-weight: bold;
+    border-bottom: 2px solid #ccc;
+    padding: 10px 0; /* Отступы сверху и снизу */
+    margin-bottom: 10px;
+}
+
+.cart-header span {
+    text-align: center; /* Центрирование текста */
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 0.5fr; /* Устанавливаем ширину колонок */
+    align-items: center; /* Центрирование по вертикали */
+    margin-bottom: 10px; /* Отступ между товарами */
+    padding: 10px 0; /* Отступы сверху и снизу для каждого товара */
+}
+
+.cart-item img {
+    width: 50px; /* Размер маленькой картинки */
+    height: auto; /* Авто-ширина для сохранения пропорций */
+}
+
+.cart-item span {
+    text-align: center; /* Центрирование текста */
+}
+
+.remove-button {
+    background-color: transparent; /* Прозрачный фон */
+    border: none; /* Без рамки */
+    color: red; /* Красный цвет для кнопки удаления */
+    cursor: pointer; /* Указатель при наведении */
+    font-weight: bold; /* Жирный шрифт */
+}

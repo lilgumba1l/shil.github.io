@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интернет-магазин техники</title>
+    <link rel="stylesheet" href="css/styles_main.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <h1>Магазин Техники</h1>
+            <p>Все для вашего комфорта</p>
+        </div>
+        <button class="cart-button">
+            <img src="images/cart-icon.png" alt="Корзина" class="cart-icon">
+            <span class="cart-count" id="cartCount">0</span> <!-- Счетчик товаров -->
+        </button>
+    </header>
+
+    <div class="hero" id="hero">
+        <h1>Добро пожаловать в наш интернет-магазин!</h1>
+    </div>
+
+    <div class="content">
+        <h2>Наши товары</h2>
+        <div class="product-card">
+            <img src="images/test.jpg" alt="Блок питания" class="product-image">
+            <h3>Блок питания 650W</h3>
+            <p>Цена: 2000 ₴</p>
+            <button class="buy-button" onclick="addToCart(1, this)">Добавить в корзину</button>
+        </div>
+    </div>
+
+    <!-- Модальное окно для корзины -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Корзина</h2>
+            <div class="cart-header">
+                <span>Товар</span>
+                <span>ID</span>
+                <span>Цена/₴</span>
+                <span>Удалить</span>
+            </div>
+            <div id="cartItems"></div>
+            <h3>Общая стоимость: <span id="totalPrice">0 ₴</span></h3>
+            
+
+            <!-- Поля ввода для информации -->
+            <div class="input-group">
+                <label for="name">Имя:</label>
+                <input type="text" id="name" placeholder="Введите ваше имя">
+            </div>
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Введите ваш email">
+            </div>
+
+            <button class="order-button">Заказать</button>
+        </div>
+    </div>
+
+    <script src="js/script_main.js"></script>
+</body>
+</html>
