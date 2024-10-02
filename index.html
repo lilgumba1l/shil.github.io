@@ -27,7 +27,7 @@
         <div class="product-card" data-id="001" data-name="Блок питания 650W" data-price="2000" data-image="images/test.jpg" data-description="Мощный блок питания для вашего ПК. Подходит для игровых и рабочих станций.">
             <img src="images/test.jpg" alt="Блок питания" class="product-image">
             <h2>Блок питания 650W</h2>
-            <p>Цена: 2000 ₴</p>
+            <p class="product__price" id="productPrice">Цена: 100 ₴</p>
             <div class="product__quantity"></div>
             <button class="buy-button" 
             data-sb-id-or-vendor-code="002"
@@ -52,13 +52,25 @@
             >Добавить в корзину</button>
         </div>
         
-        
+        <div class="product-card" data-id="002" data-name="Негр под кокаином" data-price="69" data-image="images/text.jpg" data-description="Удобный комплект для быстрой спахивания поля. Он точно трахнев вашу собаку за вас!">
+            <img src="images/text.jpg" alt="Блок питания" class="product-image">
+            <h2>Негр под кокаином</h2>
+            <p>Цена: 69 ₴</p>
+            
+            <div class="product__quantity"></div>
+            <button class="buy-button" 
+            data-sb-id-or-vendor-code="069"
+            data-sb-product-name="Негр под кокаином"
+            data-sb-product-price="69"
+            data-sb-product-quantity="1"
+            data-sb-product-img="images/text.jpg"
+            >Добавить в корзину</button>
+        </div>
     </div>
 
     
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="js/script_main.js"></script>
 
 
 
@@ -68,7 +80,8 @@
 
 
 
-<!-- Модальное окно с анимацией -->
+
+<!-- Модальное окно -->
 <div class="modal" id="productModal">
     <div class="modal-content">
         <span class="close">&times;</span>
@@ -83,7 +96,6 @@
         </div>
     </div>
 </div>
-
 
     <link rel="stylesheet" href="smartbasket/css/smartbasket.min.css">
 <div class="smart-basket__wrapper"></div>
@@ -112,6 +124,6 @@
 			});
 		});
 	</script>
-
+    <script src="js/script_main.js"></script>
 </body>
 </html>

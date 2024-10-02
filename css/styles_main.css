@@ -120,6 +120,16 @@ h2 {
     margin-bottom: 20px;
     color: white;
 }
+.old-price {
+    text-decoration: line-through;
+    color: red; /* Цвет старой цены */
+    margin: 0;
+}
+
+.discount-percentage {
+    color: green; /* Цвет для процента скидки */
+    margin: 0;
+}
 
 .product-card {
     display: inline-block;
