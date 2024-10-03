@@ -31,6 +31,10 @@ document.querySelectorAll('.product-card').forEach(function(card) {
 document.querySelector('.close').addEventListener('click', function() {
     document.getElementById('productModal').classList.remove('show');
 });
+// Закрытие модального окна по кнопке "X"
+document.querySelector('.modal-back').addEventListener('click', function() {
+    document.getElementById('productModal').classList.remove('show');
+});
 
 // Закрытие модального окна при нажатии на затемненный фон
 document.getElementById('productModal').addEventListener('click', function(event) {
@@ -43,5 +47,35 @@ document.getElementById('productModal').addEventListener('click', function(event
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
         document.getElementById('productModal').classList.remove('show');
+    }
+});
+
+
+// Получаем элемент заголовка
+const header = document.getElementById('header');
+
+// Функция для отслеживания прокрутки
+document.addEventListener('DOMContentLoaded', function() {
+    // Получаем элемент заголовка
+    const header = document.getElementById('header');
+    // Получаем целевой элемент
+    const targetElement = document.getElementById('hero');
+
+    // Проверяем, найдены ли элементы
+    if (header && targetElement) {
+        // Функция для отслеживания прокрутки
+        window.addEventListener('scroll', function() {
+            // Получаем положение целевого элемента
+            const targetPosition = targetElement.getBoundingClientRect();
+
+            // Проверяем, если целевой элемент полностью выше видимой области
+            if (targetPosition.bottom < 0) {
+                header.classList.add('show'); // Показываем заголовок
+            } else {
+                header.classList.remove('show'); // Прячем заголовок
+            }
+        });
+    } else {
+        console.error("Элементы с id='header' или id='target-element' не найдены");
     }
 });

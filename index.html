@@ -3,22 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Интернет-магазин техники</title>
     <link rel="stylesheet" href="css/styles_main.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/logo/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/logo/favicon-16x16.png">
+    <link rel="manifest" href="/images/logo/site.webmanifest">
+    <link rel="mask-icon" href="/images/logo/safari-pinned-tab.svg" color="#000000">
+    <link rel="shortcut icon" href="/images/logo/favicon.ico">
+
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-config" content="/images/logo/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+
 </head>
 <body>
-    <header class="header">
+    <header class="header" id="header">
         <div class="logo">
-            <h1>Магазин Техники</h1>
+            <img src="images/GagdetSale_logo.png" class="logo_header">
             <p>Все для вашего комфорта</p>
         </div>
-        <button class="cart-button">
+        <button class="cart-button" >
             <img src="images/cart-icon.png" alt="Корзина" class="cart-icon">
         </button>
     </header>
 
     <div class="hero" id="hero">
-        <h1>Добро пожаловать в наш интернет-магазин!</h1>
     </div>
 
     <div class="content">
@@ -51,7 +62,49 @@
             >Добавить в корзину</button>
         </div>
         
-        <div class="product-card" data-id="003" data-name="НФлешка USB 3.0" data-price="170" data-image="images/text.jpg" data-description="Это современное портативное устройство для хранения данных.">
+        <div class="product-card" data-id="003" data-name="Флешка USB 3.0" data-price="170" data-image="images/text.jpg" data-description="Это современное портативное устройство для хранения данных.">
+            <img src="images/text.jpg" alt="Блок питания" class="product-image">
+            <h2>Флешка USB 3.0</h2>
+            <p>Цена: 170 ₴</p>
+            
+            <div class="product__quantity"></div>
+            <button class="buy-button" 
+            data-sb-id-or-vendor-code="069"
+            data-sb-product-name="Флешка USB 3.0"
+            data-sb-product-price="170"
+            data-sb-product-quantity="1"
+            data-sb-product-img="images/text.jpg"
+            >Добавить в корзину</button>
+        </div>
+        <div class="product-card" data-id="003" data-name="Флешка USB 3.0" data-price="170" data-image="images/text.jpg" data-description="Это современное портативное устройство для хранения данных.">
+            <img src="images/text.jpg" alt="Блок питания" class="product-image">
+            <h2>Флешка USB 3.0</h2>
+            <p>Цена: 170 ₴</p>
+            
+            <div class="product__quantity"></div>
+            <button class="buy-button" 
+            data-sb-id-or-vendor-code="069"
+            data-sb-product-name="Флешка USB 3.0"
+            data-sb-product-price="170"
+            data-sb-product-quantity="1"
+            data-sb-product-img="images/text.jpg"
+            >Добавить в корзину</button>
+        </div>
+        <div class="product-card" data-id="003" data-name="Флешка USB 3.0" data-price="170" data-image="images/text.jpg" data-description="Это современное портативное устройство для хранения данных.">
+            <img src="images/text.jpg" alt="Блок питания" class="product-image">
+            <h2>Флешка USB 3.0</h2>
+            <p>Цена: 170 ₴</p>
+            
+            <div class="product__quantity"></div>
+            <button class="buy-button" 
+            data-sb-id-or-vendor-code="069"
+            data-sb-product-name="Флешка USB 3.0"
+            data-sb-product-price="170"
+            data-sb-product-quantity="1"
+            data-sb-product-img="images/text.jpg"
+            >Добавить в корзину</button>
+        </div>
+        <div class="product-card" data-id="003" data-name="Флешка USB 3.0" data-price="170" data-image="images/text.jpg" data-description="Это современное портативное устройство для хранения данных.">
             <img src="images/text.jpg" alt="Блок питания" class="product-image">
             <h2>Флешка USB 3.0</h2>
             <p>Цена: 170 ₴</p>
@@ -75,13 +128,9 @@
 
 
 
-
-
-
-
-
 <!-- Модальное окно -->
 <div class="modal" id="productModal">
+    <div class="modal-back"></div>
     <div class="modal-content">
         <span class="close">&times;</span>
         <div class="modal-body">

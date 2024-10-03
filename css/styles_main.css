@@ -16,6 +16,15 @@ body {
     justify-content: space-between;
     align-items: center;
     z-index: 1000; /* Чтобы шапка была поверх всего */
+    transform: translateY(-100%); /* Скрыт наверху */
+    transition: transform 0.5s ease-in-out; /* Плавный переход */
+}
+
+.header.show {
+    transform: translateY(0); /* Появление заголовка */
+}
+.logo_header{
+    max-width: 150px;
 }
 
 .logo h1 {
@@ -286,7 +295,28 @@ h2 {
     background-color: transparent;
     border: none;
 }
+.modal-back {
+    position: absolute;
+    width: 4000px;
+    height: 4000px;
+    top: -2000px;
+    right: -2000px;
+    font-size: 1.5rem;
+    cursor: default;
+    background-color: #4b4b4b00;
 
+}
+.modal-back.show {
+    position: absolute;
+    width: 4000px;
+    height: 4000px;
+    top: -2000px;
+    right: -2000px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background-color: #4b4b4bd8;
+
+}
 .modal-content h2 {
     color: #1a1a1a;
     font-size: 2rem;
@@ -397,5 +427,9 @@ h2 {
         margin-left: -140px;
         width: 150px;
         font-size: 2rem;
+    }
+    .hero {
+        height: 30vh;
+        width: 100%;
     }
 }
