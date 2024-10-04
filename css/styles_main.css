@@ -2,6 +2,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #1a1a1a;
+
 }
 
 .header {
@@ -43,6 +44,7 @@ body {
     width: 40px; /* Изменяй размер по желанию */
     height: auto;
 }
+
 
 .cart-button {
     background-color: #aa8110;
@@ -119,24 +121,110 @@ margin-top: 100px;
 .content {
     padding: 40px;
     text-align: center;
-
+    display: flex;              /* Включаем flexbox для контейнера */
+    gap: 20px;   
     position: relative;
+    max-width: 100%; /* Убедитесь, что контейнеры не превышают ширину экрана */
+
 }
 
 h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
     color: white;
-}
-.old-price {
-    text-decoration: line-through;
-    color: red; /* Цвет старой цены */
-    margin: 0;
+    text-align: center;
 }
 
-.discount-percentage {
-    color: green; /* Цвет для процента скидки */
-    margin: 0;
+.filter-buttons {
+     
+nav-down: 6;
+}
+
+.filter-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px; 
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
+}
+
+.filter-btn:hover {
+  background-color: #ddd; /* Цвет при наведении */
+}
+
+.filter-btn.active {
+  background-color: #28a745;
+  color: white;
+  border-color: #0056b3;
+}
+
+.product-card {
+  display: none; /* По умолчанию скрываем все товары */
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+#productList {
+    display: flex;           /* Используем flexbox для горизонтального выравнивания */
+    flex-wrap: wrap;         /* Чтобы товары переносились на новую строку при нехватке места */
+    gap: 20px;               /* Расстояние между карточками товаров */
+    background-color: #202020;
+    border-radius: 25px; /* Круглая форма */
+    flex: 0 0 80%;                    /* Список товаров занимает 70% ширины */
+    padding: 10px;                    /* Отступы для внутреннего содержимого */
+}
+.productsearchlist{
+    background-color: #202020;
+    border-radius: 25px; /* Круглая форма */
+    flex: 0 0 17%;   
+    gap: 20px;    
+    height: inherit;
+    padding: 5px;                    /* Отступы для внутреннего содержимого */
+}
+.productsearchlist2{
+    background-color: #202020;
+    border-radius: 25px; /* Круглая форма */
+    flex: 0 0 17%;   
+    gap: 10px;    
+    max-height: 250px;                 /* Панель поиска занимает 30% ширины */
+    padding: 10px;                    /* Отступы для внутреннего содержимого */
+    display: none; /* По умолчанию скрываем все товары */
+}
+.productsearchlist h2{
+    font-size: 1.5rem;
+}
+.productsearchlist2 h2{
+    font-size: 1.5rem;
+}
+.search-input {
+    width: 100%;
+    padding: 0 15px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 60px;
+    font-size: 15px;
+    border-radius: 15px;
+    transition: .5s;
+    position: relative;
+    font-family: 'Exo 2', 'Open Sans', sans-serif;
+}
+
+.product-card {
+    max-width: 300px;
+    max-height: 530px;
+    border: 1px solid #ccc;  /* Добавим границу для наглядности */
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;      /* Центрируем текст внутри карточек */
+    box-sizing: border-box;  /* Включаем padding в общую ширину */
 }
 
 .product-card {
@@ -347,8 +435,23 @@ h2 {
     font-size: 3rem;
 }
 
-
-@media (max-width:1030px){
+@media (max-width:1000px){
+    .product-card {
+        display: inline-block;
+        background-color: rgb(212, 212, 212);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        width: 270px;
+        margin: 20px;
+        height: 530px;
+        transition: transform 0.3s;
+    }
+    .search-input{
+        font-size: 10px;
+    }
+}
+@media (max-width:850px){
 	.product-card {
         display: inline-block;
         background-color: rgb(212, 212, 212);
@@ -437,4 +540,36 @@ h2 {
         height: 30vh;
         width: 100%;
     }
+    #productList{
+        flex: 0 0 100%;                    /* Список товаров занимает 70% ширины */
+        display: flex;           /* Используем flexbox для горизонтального выравнивания */
+        flex-wrap: wrap;         /* Чтобы товары переносились на новую строку при нехватке места */
+        gap: 10px;               /* Расстояние между карточками товаров */
+        padding: 5px;                    /* Отступы для внутреннего содержимого */
+    }
+    .productsearchlist{
+        display: none;
+        position: absolute;
+    }
+    .productsearchlist2{
+        display: block;
+
+    }
 }
+/* Для мобильных устройств */
+@media (max-width: 320px) {
+    .productList {
+      width: 100%; /* Занимаем всю ширину экрана */
+      margin: 0; /* Убираем внешние отступы */
+      padding: 0; /* Убираем внутренние отступы */
+    }
+  
+    .product-card {
+      width: 100%; /* Каждая карточка продукта также на всю ширину */
+      margin: 0; /* Убираем внешние отступы между карточками */
+      padding: 10px; /* Минимальный отступ внутри карточек для контента */
+      box-sizing: border-box; /* Убедимся, что padding не увеличивает ширину */
+      height: inherit;
+    }
+  }
+  

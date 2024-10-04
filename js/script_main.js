@@ -79,3 +79,79 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error("Элементы с id='header' или id='target-element' не найдены");
     }
 });
+
+// Функция для фильтрации товаров
+document.getElementById('productSearch').addEventListener('input', function() {
+    const searchQuery = this.value.toLowerCase(); // Получаем введенный текст и приводим его к нижнему регистру
+    const products = document.querySelectorAll('.product-card'); // Получаем все карточки товаров
+
+    products.forEach(function(product) {
+        const productName = product.getAttribute('data-name').toLowerCase(); // Получаем название товара
+
+        // Проверяем, содержит ли название товара введенный текст
+        if (productName.includes(searchQuery)) {
+            product.style.display = 'block'; // Показываем товар, если он подходит под запрос
+        } else {
+            product.style.display = 'none'; // Скрываем товар, если он не подходит
+        }
+    });
+});
+// Функция для фильтрации товаров
+document.getElementById('productSearch2').addEventListener('input', function() {
+    const searchQuery = this.value.toLowerCase(); // Получаем введенный текст и приводим его к нижнему регистру
+    const products = document.querySelectorAll('.product-card'); // Получаем все карточки товаров
+
+    products.forEach(function(product) {
+        const productName = product.getAttribute('data-name').toLowerCase(); // Получаем название товара
+
+        // Проверяем, содержит ли название товара введенный текст
+        if (productName.includes(searchQuery)) {
+            product.style.display = 'block'; // Показываем товар, если он подходит под запрос
+        } else {
+            product.style.display = 'none'; // Скрываем товар, если он не подходит
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const productCards = document.querySelectorAll('.product-card');
+  
+    // Функция для фильтрации продуктов
+    function filterProducts(tag) {
+      productCards.forEach(card => {
+        const productTag = card.getAttribute('data-class');
+        if (tag === 'all' || productTag === tag) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  
+    // Функция для сброса активного состояния кнопок
+    function clearActiveButtons() {
+      filterButtons.forEach(button => {
+        button.classList.remove('active');
+      });
+    }
+  
+    // Добавляем обработчики событий на кнопки
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        const tag = this.getAttribute('data-tag');
+  
+        // Удаляем активный класс у всех кнопок и добавляем его только к текущей кнопке
+        clearActiveButtons();
+        this.classList.add('active');
+  
+        // Фильтруем продукты
+        filterProducts(tag);
+      });
+    });
+  
+    // Показываем все товары и делаем первую кнопку активной по умолчанию
+    filterProducts('all');
+    document.querySelector('.filter-btn[data-tag="all"]').classList.add('active');
+  });
+  

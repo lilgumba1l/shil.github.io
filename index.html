@@ -15,7 +15,7 @@
     <meta name="msapplication-TileColor" content="#000000">
     <meta name="msapplication-config" content="/images/logo/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
-
+    <title>GagdetSale</title>
 
 </head>
 <body>
@@ -31,10 +31,32 @@
 
     <div class="hero" id="hero">
     </div>
+    <h2>Наши товары</h2>
+    <div class="productsearchlist2">
+        <input type="text" id="productSearch" placeholder="Названию товара или артикул" class="search-input" />
+        <h2>Теги</h2>
+        <div class="filter-buttons">
+            <button class="filter-btn" data-tag="all">Все</button>
+            <button class="filter-btn" data-tag="Флешка">Флешка</button>
+            <button class="filter-btn" data-tag="Кабель">Кабель</button>
+            <button class="filter-btn" data-tag="Зарядное">Зарядное устройство</button>
+          </div>
+    </div>
 
     <div class="content">
-        <h2>Наши товары</h2>
-        <div class="product-card" data-id="001" data-name="Блок питания 650W" data-price="2000" data-image="images/test.jpg" data-description="Мощный блок питания для вашего ПК. Подходит для игровых и рабочих станций.">
+
+    <div class="productsearchlist">
+        <input type="text" id="productSearch2" placeholder="Названию товара или артикул" class="search-input" />
+        <h2>Теги</h2>
+        <div class="filter-buttons">
+            <button class="filter-btn" data-tag="all">Все</button>
+            <button class="filter-btn" data-tag="Флешка">Флешка</button>
+            <button class="filter-btn" data-tag="Кабель">Кабель</button>
+            <button class="filter-btn" data-tag="Зарядное">Зарядное устройство</button>
+          </div>
+    </div>
+        <div id="productList">
+        <div class="product-card" data-id="001" data-name="Блок питания 650W    001" data-price="2000" data-class="Зарядное" data-image="images/test.jpg" data-description="Мощный блок питания для вашего ПК. Подходит для игровых и рабочих станций.">
             <img src="images/test.jpg" alt="Блок питания" class="product-image">
             <h2>Блок питания 650W</h2>
             <p class="product__price" id="productPrice">Цена: 2000 ₴</p>
@@ -47,7 +69,7 @@
             data-sb-product-img="images/test.jpg"
             >Добавить в корзину</button>
         </div>
-        <div class="product-card" data-id="002" data-name="Комплект швидкої зарядки для телефону" data-price="400" data-image="images/test2.jpg" data-description="Удобный комплект для быстрой зарядки вашего телефона. Включает адаптер и кабель.">
+        <div class="product-card" data-id="002" data-name="Комплект швидкої зарядки для телефону 002" data-price="400" data-class="Кабель" data-image="images/test2.jpg" data-description="Удобный комплект для быстрой зарядки вашего телефона. Включает адаптер и кабель.">
             <img src="images/test2.jpg" alt="Блок питания" class="product-image">
             <h2>Комплект швидкої зарядки для телефону</h2>
             <p>Цена: 400 ₴</p>
@@ -62,66 +84,54 @@
             >Добавить в корзину</button>
         </div>
         
-        <div class="product-card" data-id="003" data-name="Флешка USB 3.0" data-price="170" data-image="images/text.jpg" data-description="Это современное портативное устройство для хранения данных.">
+        <div class="product-card" data-id="003" data-name="Флешка USB 32GB     003" data-class="Флешка" data-price="170" data-image="images/text.jpg" data-description="Это современное портативное устройство для хранения данных.">
             <img src="images/text.jpg" alt="Блок питания" class="product-image">
-            <h2>Флешка USB 3.0</h2>
+            <h2>Флешка USB 32GB</h2>
             <p>Цена: 170 ₴</p>
             
             <div class="product__quantity"></div>
             <button class="buy-button" 
-            data-sb-id-or-vendor-code="069"
-            data-sb-product-name="Флешка USB 3.0"
+            data-sb-id-or-vendor-code="003"
+            data-sb-product-name="Флешка USB 32GB "
             data-sb-product-price="170"
             data-sb-product-quantity="1"
             data-sb-product-img="images/text.jpg"
             >Добавить в корзину</button>
         </div>
-        <div class="product-card" data-id="003" data-name="Флешка USB 3.0" data-price="170" data-image="images/text.jpg" data-description="Это современное портативное устройство для хранения данных.">
-            <img src="images/text.jpg" alt="Блок питания" class="product-image">
-            <h2>Флешка USB 3.0</h2>
-            <p>Цена: 170 ₴</p>
+        <div class="product-card" data-id="004" data-name="Флешка USB 64GB     004" data-class="Флешка" data-price="250" data-image="images/test3.jpg" data-description="Это современное портативное устройство для хранения данных.">
+            <img src="images/test3.jpg" alt="Блок питания" class="product-image">
+            <h2>Флешка USB 64GB</h2>
+            <p>Цена: 250 ₴</p>
             
             <div class="product__quantity"></div>
             <button class="buy-button" 
-            data-sb-id-or-vendor-code="069"
-            data-sb-product-name="Флешка USB 3.0"
-            data-sb-product-price="170"
+            data-sb-id-or-vendor-code="004"
+            data-sb-product-name="Флешка USB 64GB"
+            data-sb-product-price="250"
             data-sb-product-quantity="1"
-            data-sb-product-img="images/text.jpg"
+            data-sb-product-img="images/test3.jpg"
             >Добавить в корзину</button>
         </div>
-        <div class="product-card" data-id="003" data-name="Флешка USB 3.0" data-price="170" data-image="images/text.jpg" data-description="Это современное портативное устройство для хранения данных.">
-            <img src="images/text.jpg" alt="Блок питания" class="product-image">
-            <h2>Флешка USB 3.0</h2>
-            <p>Цена: 170 ₴</p>
+        <div class="product-card" data-id="005" data-name="Зарядний пристрій для телефону   005" data-price="475" data-class="Зарядное" data-image="images/test4.jpg" data-description="Оригінальна швидка зарядка на 30 Вт з двома портами USB та Type-С.">
+            <img src="images/test4.jpg" alt="Блок питания" class="product-image">
+            <h2>Зарядний пристрій для телефону </h2>
+            <p>Цена: 475 ₴</p>
             
             <div class="product__quantity"></div>
             <button class="buy-button" 
-            data-sb-id-or-vendor-code="069"
-            data-sb-product-name="Флешка USB 3.0"
-            data-sb-product-price="170"
+            data-sb-id-or-vendor-code="005"
+            data-sb-product-name="Зарядний пристрій для телефону "
+            data-sb-product-price="475"
             data-sb-product-quantity="1"
-            data-sb-product-img="images/text.jpg"
+            data-sb-product-img="images/test4.jpg"
             >Добавить в корзину</button>
         </div>
-        <div class="product-card" data-id="003" data-name="Флешка USB 3.0" data-price="170" data-image="images/text.jpg" data-description="Это современное портативное устройство для хранения данных.">
-            <img src="images/text.jpg" alt="Блок питания" class="product-image">
-            <h2>Флешка USB 3.0</h2>
-            <p>Цена: 170 ₴</p>
-            
-            <div class="product__quantity"></div>
-            <button class="buy-button" 
-            data-sb-id-or-vendor-code="069"
-            data-sb-product-name="Флешка USB 3.0"
-            data-sb-product-price="170"
-            data-sb-product-quantity="1"
-            data-sb-product-img="images/text.jpg"
-            >Добавить в корзину</button>
-        </div>
-    </div>
 
-    
+
+
     </div>
+    
+</div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
 
