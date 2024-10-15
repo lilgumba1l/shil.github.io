@@ -4,14 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles_main.css">
-
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
     <link rel="apple-touch-icon" sizes="180x180" href="/images/logo/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/logo/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/logo/favicon-16x16.png">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    
     <link rel="manifest" href="/images/logo/site.webmanifest">
     <link rel="mask-icon" href="/images/logo/safari-pinned-tab.svg" color="#000000">
     <link rel="shortcut icon" href="/images/logo/favicon.ico">
-
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    
+    
     <meta name="msapplication-TileColor" content="#000000">
     <meta name="msapplication-config" content="/images/logo/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
@@ -22,7 +29,7 @@
     <header class="header" id="header">
         <div class="logo">
             <img src="images/GagdetSale_logo.png" class="logo_header">
-            <p>Все для вашего комфорта</p>
+            <p>Усе для вашого комфорту</p>
         </div>
         <button class="cart-button" >
             <div class="cart-icon"></div>
@@ -31,130 +38,569 @@
 
     <div class="hero" id="hero">
     </div>
-    <h2>Наши товары</h2>
+    <h2>Наші товари</h2>
     <div class="productsearchlist2">
-        <input type="text" id="productSearch" placeholder="Названию товара или артикул" class="search-input" />
+        <input type="text" id="productSearch" placeholder="Назва товару або артикул" class="search-input" />
         <h2>Теги</h2>
         <div class="filter-buttons">
             <button class="filter-btn active" data-tag="all">Все</button>
-            <button class="filter-btn" data-tag="Флешка">Флешка</button>
             <button class="filter-btn" data-tag="Кабель">Кабель</button>
-            <button class="filter-btn" data-tag="Зарядное">Зарядное устройство</button>
+            <button class="filter-btn" data-tag="Зарядное">Зарядний пристрій</button>
           </div>
     </div>
 
     <div class="content">
 
     <div class="productsearchlist">
-        <input type="text" id="productSearch2" placeholder="Названию товара или артикул" class="search-input" />
+        <input type="text" id="productSearch2" placeholder="Назва товару або артикул" class="search-input" />
         <h2>Теги</h2>
         <div class="filter-buttons">
             <button class="filter-btn" data-tag="all">Все</button>
-            <button class="filter-btn" data-tag="Флешка">Флешка</button>
             <button class="filter-btn" data-tag="Кабель">Кабель</button>
-            <button class="filter-btn" data-tag="Зарядное">Зарядное устройство</button>
+            <button class="filter-btn" data-tag="Зарядное">Зарядний пристрій</button>
+            <button class="filter-btn" data-tag="Інше">Інше</button>
           </div>
     </div>
         <div id="productList">
-        <div class="product-card" data-id="001" data-name="Блок питания 650W    001" data-price="2000" data-class="Зарядное" data-image="images/test.jpg" data-description="Мощный блок питания для вашего ПК. Подходит для игровых и рабочих станций.">
-            <img src="images/test.jpg" alt="Блок питания" class="product-image">
-            <h2>Блок питания 650W</h2>
-            <p class="product__price" id="productPrice">Цена: 2000 ₴</p>
-            <div class="product__quantity"></div>
-            <button class="buy-button" 
-            data-sb-id-or-vendor-code="002"
-            data-sb-product-name="Блок питания 650W"
-            data-sb-product-price="2000"
-            data-sb-product-quantity="1"
-            data-sb-product-img="images/test.jpg"
-            >Добавить в корзину</button>
-        </div>
-        <div class="product-card" data-id="002" data-name="Комплект швидкої зарядки для телефону 002" data-price="400" data-class="Кабель" data-image="images/test2.jpg" data-description="Удобный комплект для быстрой зарядки вашего телефона. Включает адаптер и кабель.">
-            <img src="images/test2.jpg" alt="Блок питания" class="product-image">
-            <h2>Комплект швидкої зарядки для телефону</h2>
-            <p>Цена: 400 ₴</p>
+        <div class="product-card" data-id="101" data-name="SB 2,4A QC 15 W чорний WALKER WH-35   ID:101" data-price="329" data-class="Зарядное" data-image="images/card/101.webp" data-description="Мережевий зарядний пристрій USB для швидкого заряджання WALKER WH-35 стане чудовим помічником під час заряджання ваших ґаджетів.">
+            <img src="images/card/101.webp" alt="WALKER WH-35" class="product-image">
+            <h2>WALKER WH-35</h2>
             
+            <span class="product__quantity2" id="quantity-101" >Кількість товару: <span class="quantity-value">Error</span></span>
+
+            <p class="product__price" id="productPrice">Цена: 329 ₴</p>
             <div class="product__quantity"></div>
             <button class="buy-button" 
-            data-sb-id-or-vendor-code="001"
-            data-sb-product-name="Комплект швидкої зарядки для телефону"
-            data-sb-product-price="400"
+            data-sb-id-or-vendor-code="101"
+            data-sb-product-name="WALKER WH-35"
+            data-sb-product-price="329"
             data-sb-product-quantity="1"
-            data-sb-product-img="images/test2.jpg"
+            data-sb-product-img="images/card/101.webp"
             >Добавить в корзину</button>
         </div>
+        <div class="product-card" data-id="102" data-name="Зарядное устройство с дисплеем Usams T46 33w + Type-C to Lightning 20W PD Cable   102" data-price="1099" data-class="Зарядное" data-image="images/card/102.webp" data-description="Зарядное устройство USAMS T46 имеет мощность 33 Вт и 2 выходных порта, что позволяет ему быстро заряжать два устройства одновременно. В комплекте с Type-C to Lightning 20W.">
+            <img src="images/card/102.webp" alt="Usams T46 33w" class="product-image">
+            <h2>Usams T46 33w</h2>
+            
+            <span class="product__quantity2" id="quantity-102" >Кількість товару: <span class="quantity-value">Error</span></span>
+
+            <p class="product__price" id="productPrice">Цена: 1099 ₴</p>
+            <div class="product__quantity"></div>
+            <button class="buy-button" 
+            data-sb-id-or-vendor-code="102"
+            data-sb-product-name="Usams T46 33w"
+            data-sb-product-price="1099"
+            data-sb-product-quantity="1"
+            data-sb-product-img="images/card/102.webp"
+            >Добавить в корзину</button>
+        </div>
+        <div class="product-card" data-id="103" data-name="Toocki GaN 65W Type-C   ID:103" data-price="-" data-class="Зарядное" data-image="images/card/103.webp" data-description="Мощное и компактное сетевое зарядное устройство от известного бренда Toocki на 65W. Есть выход Type-C для зарядки ноутбуков и смартфонов с поддержкой PD, QC 4.0, а также порт USB-A с поддержкой QC 3.0.">
+            <img src="images/card/103.webp" class="product-image">
+            <h2>Toocki GaN 65W Type-C</h2>
+            
+            <span class="product__quantity2" id="quantity-103" >Кількість товару: <span class="quantity-value">Error</span></span>
+
+            <p class="product__price" id="productPrice">Цена: - ₴</p>
+            <div class="product__quantity"></div>
+            <button class="buy-button" 
+            data-sb-id-or-vendor-code="103"
+            data-sb-product-name="Toocki GaN 65W Type-C"
+            data-sb-product-price="-"
+            data-sb-product-quantity="1"
+            data-sb-product-img="images/card/103.webp"
+            >Добавить в корзину</button>
+        </div>
+        <div class="product-card" data-id="104" data-name="Сетевое зарядное устройство XO L90B PD20W   ID:104" data-price="589" data-class="Зарядное" data-image="images/card/104.png" data-description="Cетевое зарядное устройство с разъемом Type-C, поддерживающее быструю зарядку, что позволяет заряжать гаджеты в 3 раза быстрее, чем со стандартными устройствами.">
+            <img src="images/card/104.png" class="product-image">
+            <h2>XO L90B PD20W</h2>
         
-        <div class="product-card" data-id="003" data-name="Флешка USB 32GB     003" data-class="Флешка" data-price="170" data-image="images/text.jpg" data-description="Это современное портативное устройство для хранения данных.">
-            <img src="images/text.jpg" alt="Блок питания" class="product-image">
-            <h2>Флешка USB 32GB</h2>
-            <p>Цена: 170 ₴</p>
-            
+            <span class="product__quantity2" id="quantity-104" >Кількість товару: <span class="quantity-value">Error</span></span>
+
+            <p class="product__price" id="productPrice">Цена: 589 ₴</p>
             <div class="product__quantity"></div>
             <button class="buy-button" 
-            data-sb-id-or-vendor-code="003"
-            data-sb-product-name="Флешка USB 32GB "
-            data-sb-product-price="170"
+            data-sb-id-or-vendor-code="104"
+            data-sb-product-name="XO L90B PD20W"
+            data-sb-product-price="589"
             data-sb-product-quantity="1"
-            data-sb-product-img="images/text.jpg"
+            data-sb-product-img="images/card/104.png"
             >Добавить в корзину</button>
         </div>
-        <div class="product-card" data-id="004" data-name="Флешка USB 64GB     004" data-class="Флешка" data-price="250" data-image="images/test3.jpg" data-description="Это современное портативное устройство для хранения данных.">
-            <img src="images/test3.jpg" alt="Блок питания" class="product-image">
-            <h2>Флешка USB 64GB</h2>
-            <p>Цена: 250 ₴</p>
-            
+        <div class="product-card" data-id="105" data-name="МЗП XO L127 USB-A QC18W + TYPE-C CABLE       ID:105" data-price="399" data-class="Зарядное" data-image="images/card/105.webp" data-description="Это мощное и надежное решение для быстрой зарядки ваших устройств.">
+            <img src="images/card/105.webp" class="product-image">
+            <h2>XO L127 USB-A QC18W</h2>
+        
+            <span class="product__quantity2" id="quantity-105" >Кількість товару: <span class="quantity-value">Error</span></span>
+
+            <p class="product__price" id="productPrice">Цена: 399 ₴</p>
             <div class="product__quantity"></div>
             <button class="buy-button" 
-            data-sb-id-or-vendor-code="004"
-            data-sb-product-name="Флешка USB 64GB"
-            data-sb-product-price="250"
+            data-sb-id-or-vendor-code="105"
+            data-sb-product-name="XO L127 USB-A QC18W"
+            data-sb-product-price="399"
             data-sb-product-quantity="1"
-            data-sb-product-img="images/test3.jpg"
+            data-sb-product-img="images/card/105.webp"
             >Добавить в корзину</button>
         </div>
-        <div class="product-card" data-id="005" data-name="Зарядний пристрій для телефону   005" data-price="475" data-class="Зарядное" data-image="images/test4.jpg" data-description="Оригінальна швидка зарядка на 30 Вт з двома портами USB та Type-С.">
-            <img src="images/test4.jpg" alt="Блок питания" class="product-image">
-            <h2>Зарядний пристрій для телефону </h2>
-            <p>Цена: 475 ₴</p>
-            
+        <div class="product-card" data-id="106" data-name="XO QC 3.0 L85 18W/1USB + microUSB White       ID:106" data-price="389" data-class="Зарядное" data-image="images/card/106.webp" data-description="Это эффективное и надежное решение для быстрой зарядки ваших устройств, совместимое с технологией Quick Charge 3.0.">
+            <img src="images/card/106.webp" class="product-image">
+            <h2>XO QC 3.0 L85 18W</h2>
+        
+            <span class="product__quantity2" id="quantity-106" >Кількість товару: <span class="quantity-value">Error</span></span>
+
+            <p class="product__price" id="productPrice">Цена: 389 ₴</p>
             <div class="product__quantity"></div>
             <button class="buy-button" 
-            data-sb-id-or-vendor-code="005"
-            data-sb-product-name="Зарядний пристрій для телефону "
-            data-sb-product-price="475"
+            data-sb-id-or-vendor-code="106"
+            data-sb-product-name="XO QC 3.0 L85 18W"
+            data-sb-product-price="389"
             data-sb-product-quantity="1"
-            data-sb-product-img="images/test4.jpg"
+            data-sb-product-img="images/card/106.webp"
+            >Добавить в корзину</button>
+        </div>
+        <div class="product-card" data-id="107" data-name="XO L103 single USB QC3.0 18W 3A with MicroUSB cable White      ID:107" data-price="389" data-class="Зарядное" data-image="images/card/107.webp" data-description="Ідеальне рішення для швидкої та ефективної підзарядки ваших пристроїв. Завдяки технології Quick Charge 3.0, цей зарядний пристрій забезпечує швидкість заряджання до 18W.">
+            <img src="images/card/107.webp" class="product-image">
+            <h2>XO L103 single USB QC3.0 18W</h2>
+        
+            <span class="product__quantity2" id="quantity-107" >Кількість товару: <span class="quantity-value">Error</span></span>
+
+            <p class="product__price" id="productPrice">Цена: 389 ₴</p>
+            <div class="product__quantity"></div>
+            <button class="buy-button" 
+            data-sb-id-or-vendor-code="107"
+            data-sb-product-name="XO L103 single USB QC3.0 18W"
+            data-sb-product-price="389"
+            data-sb-product-quantity="1"
+            data-sb-product-img="images/card/107.webp"
+            >Добавить в корзину</button>
+        </div>
+        <div class="product-card" data-id="108" data-name="Адаптер-перехідник універсальний на євровилку, WALKER, WH-01      ID:108" data-price="149" data-class="Інше" data-image="images/card/108.webp" data-description="Це практичний мережевий адаптер, який дозволяє підключати електронні пристрої з різними типами вилок до європейських розеток. Він підтримує адаптацію для розеток типів EU, US, UK, а також тип I (CN).">
+            <img src="images/card/108.webp" class="product-image">
+            <h2>Адаптер-перехідник WALKER, WH-01</h2>
+        
+            <span class="product__quantity2" id="quantity-108" >Кількість товару: <span class="quantity-value">Error</span></span>
+
+            <p class="product__price" id="productPrice">Цена: 149 ₴</p>
+            <div class="product__quantity"></div>
+            <button class="buy-button" 
+            data-sb-id-or-vendor-code="108"
+            data-sb-product-name="WALKER, WH-01"
+            data-sb-product-price="149"
+            data-sb-product-quantity="1"
+            data-sb-product-img="images/card/108.webp"
+            >Добавить в корзину</button>
+        </div>
+        <div class="product-card" data-id="109" data-name="Зарядний пристрій XO L59 QC3.0 3A 18W White      ID:109" data-price="319" data-class="Зарядное" data-image="images/card/109.webp" data-description="Універсальний мережевий зарядний пристрій XO L59 з одним портом USB-A QC3.0 і європейською вилкою. XO L59 практично не гріється, захищений від перевантажень, оснащений індикатором зарядки та забезпечує вихідний струм ЗА.">
+            <img src="images/card/109.webp" class="product-image">
+            <h2>XO L59 QC3.0 3A 18W</h2>
+        
+            <span class="product__quantity2" id="quantity-109" >Кількість товару: <span class="quantity-value">Error</span></span>
+
+            <p class="product__price" id="productPrice">Цена: 319 ₴</p>
+            <div class="product__quantity"></div>
+            <button class="buy-button" 
+            data-sb-id-or-vendor-code="109"
+            data-sb-product-name="XO L59 QC3.0 3A 18W"
+            data-sb-product-price="319"
+            data-sb-product-quantity="1"
+            data-sb-product-img="images/card/109.webp"
+            >Добавить в корзину</button>
+        </div>
+        <div class="product-card" data-id="110" data-name="Мережевий зарядний пристрій XO L103 адаптер QC3.0 / 18W      ID:110" data-price="199" data-class="Зарядное" data-image="images/card/110.webp" data-description="Це зарядний пристрій, призначений для підзарядки акумулятора гаджета від мережі змінного струму (напруга 220 вольт) за допомогою необхідного кабелю.">
+            <img src="images/card/110.webp" class="product-image">
+            <h2>XO L103 single USB QC3.0 18W</h2>
+        
+            <span class="product__quantity2" id="quantity-110" >Кількість товару: <span class="quantity-value">Error</span></span>
+
+            <p class="product__price" id="productPrice">Цена: 199 ₴</p>
+            <div class="product__quantity"></div>
+            <button class="buy-button" 
+            data-sb-id-or-vendor-code="110"
+            data-sb-product-name="XO L103 single USB QC3.0 18W"
+            data-sb-product-price="199"
+            data-sb-product-quantity="1"
+            data-sb-product-img="images/card/110.webp"
+            >Добавить в корзину</button>
+        </div>
+        <div class="product-card" data-id="111" data-name="Зарядний пристрій Hoco C73A Glorious dual port charger White       ID:111" data-price="199" data-class="Зарядное" data-image="images/card/111.webp" data-description="Він допоможе швидко та безпечно зарядити будь-який телефон, планшет, навушники за короткий проміжок часу.">
+            <img src="images/card/111.webp" class="product-image">
+            <h2>Hoco C73A Glorious dual port charger</h2>
+        
+            <span class="product__quantity2" id="quantity-111" >Кількість товару: <span class="quantity-value">Error</span></span>
+
+            <p class="product__price" id="productPrice">Цена: 199 ₴</p>
+            <div class="product__quantity"></div>
+            <button class="buy-button" 
+            data-sb-id-or-vendor-code="111"
+            data-sb-product-name="Hoco C73A Glorious dual port charger"
+            data-sb-product-price="199"
+            data-sb-product-quantity="1"
+            data-sb-product-img="images/card/111.webp"
+            >Добавить в корзину</button>
+        </div>
+        <div class="product-card" data-id="112" data-name="Зарядний пристрій XO L72 18w QC3.0 3хUSB-A ports charger       ID:112" data-price="349" data-class="Зарядное" data-image="images/card/112.webp" data-description="Качественный блок питания производства компании XO на 3 выхода USB, поддерживающий быструю зарядку от Qualcomm Quick Charge 3.0. Также данный блок питания поддерживает быструю зарядку QC 2.0 и обычную 5 вольт 1 или 2 ампера.">
+            <img src="images/card/112.webp" class="product-image">
+            <h2>HXO L72 18w QC</h2>
+        
+            <span class="product__quantity2" id="quantity-112" >Кількість товару: <span class="quantity-value">Error</span></span>
+
+            <p class="product__price" id="productPrice">Цена: 349 ₴</p>
+            <div class="product__quantity"></div>
+            <button class="buy-button" 
+            data-sb-id-or-vendor-code="112"
+            data-sb-product-name="XO L72 18w QC"
+            data-sb-product-price="349"
+            data-sb-product-quantity="1"
+            data-sb-product-img="images/card/112.webp"
+            >Добавить в корзину</button>
+        </div>
+        <div class="product-card" data-id="113" data-name="Зарядний пристрій JOKADE JB009 ZHANCHONG Type-C White       ID:113" data-price="349" data-class="Зарядное" data-image="images/card/113.webp" data-description="Це дає змогу ефективно використовувати його для заряджання новітніх смартфонів й інших цифрових пристроїв. Заряджайте ваші цифрові пристрої швидко й ефективно, використовуючи для цього мережевий зарядний блок JOKADE JB009 ZHANCHONG з підтримкою технології Super Fast Charging.">
+            <img src="images/card/113.webp" class="product-image">
+            <h2>JOKADE JB009 ZHANCHONG Type-C</h2>
+        
+            <span class="product__quantity2" id="quantity-113" >Кількість товару: <span class="quantity-value">Error</span></span>
+
+            <p class="product__price" id="productPrice">Цена: 349 ₴</p>
+            <div class="product__quantity"></div>
+            <button class="buy-button" 
+            data-sb-id-or-vendor-code="113"
+            data-sb-product-name="JOKADE JB009 ZHANCHONG Type-C"
+            data-sb-product-price="349"
+            data-sb-product-quantity="1"
+            data-sb-product-img="images/card/113.webp"
+            >Добавить в корзину</button>
+        </div>
+        <div class="product-card" data-id="114" data-name="Зарядний пристрій JOKADE JB009 ZHANCHONG Type-C White       ID:114" data-price="379" data-class="Зарядное" data-image="images/card/114.webp" data-description="Це зарядний пристрій, призначений для підзарядки акумулятора гаджета від мережі змінного струму (напруга 220 вольт) за допомогою необхідного кабелю.">
+            <img src="images/card/114.webp" class="product-image">
+            <h2>WALKER WH-42 20W</h2>
+        
+            <span class="product__quantity2" id="quantity-114" >Кількість товару: <span class="quantity-value">Error</span></span>
+
+            <p class="product__price" id="productPrice">Цена: 379 ₴</p>
+            <div class="product__quantity"></div>
+            <button class="buy-button" 
+            data-sb-id-or-vendor-code="114"
+            data-sb-product-name="WALKER WH-42 20W"
+            data-sb-product-price="379"
+            data-sb-product-quantity="1"
+            data-sb-product-img="images/card/114.webp"
+            >Добавить в корзину</button>
+        </div>
+        <div class="product-card" data-id="115" data-name="Зарядний пристрій JOKADE JB009 ZHANCHONG Type-C White       ID:115" data-price="209" data-class="Зарядное" data-image="images/card/115.webp" data-description="Універсальний, мережевий адаптер (зарядний пристрій) від виробника XO. Модель адаптера XO-L62 має два USB і оригінальним розташуванням двох USB.">
+            <img src="images/card/115.webp" class="product-image">
+            <h2>СЗУ XO L62</h2>
+        
+            <span class="product__quantity2" id="quantity-115" >Кількість товару: <span class="quantity-value">Error</span></span>
+
+            <p class="product__price" id="productPrice">Цена: 209 ₴</p>
+            <div class="product__quantity"></div>
+            <button class="buy-button" 
+            data-sb-id-or-vendor-code="115"
+            data-sb-product-name="СЗУ XO L62"
+            data-sb-product-price="209"
+            data-sb-product-quantity="1"
+            data-sb-product-img="images/card/115.webp"
+            >Добавить в корзину</button>
+        </div>
+        <div class="product-card" data-id="116" data-name="USB PD Кабель Walker C795 35w 3.3a 1м. USB Type-C - Lightning cable Black       ID:116" data-price="319" data-class="Кабель" data-image="images/card/116.webp" data-description="Відноситься до типу шнури зарядні, для швидкої зарядки, синхро-зарядні. Він як найкраще підходить для телефонів, для планшетів, для MP3 плеєрів, якщо потрібно синхронізувати мобільний телефон або планшет і ПК або ноутбук.">
+            <img src="images/card/116.webp" class="product-image">
+            <h2>Walker C795 35w 3.3a USB Type-C</h2>
+        
+            <span class="product__quantity2" id="quantity-116" >Кількість товару: <span class="quantity-value">Error</span></span>
+
+            <p class="product__price" id="productPrice">Цена: 319 ₴</p>
+            <div class="product__quantity"></div>
+            <button class="buy-button" 
+            data-sb-id-or-vendor-code="116"
+            data-sb-product-name="Walker C795 35w 3.3a USB Type-C"
+            data-sb-product-price="319"
+            data-sb-product-quantity="1"
+            data-sb-product-img="images/card/116.webp"
+            >Добавить в корзину</button>
+        </div>
+        <div class="product-card" data-id="117" data-name="USB PD Кабель Walker C795 60w 3.3a 1м. USB Type-C - Type-C cable White       ID:117" data-price="319" data-class="Кабель" data-image="images/card/117.webp" data-description="Відноситься до типу шнури зарядні, для швидкої зарядки, синхро-зарядні. Він як найкраще підходить для телефонів, для планшетів, для MP3 плеєрів, якщо потрібно синхронізувати мобільний телефон або планшет і ПК або ноутбук.">
+            <img src="images/card/117.webp" class="product-image">
+            <h2>Walker C795 60w 3.3a USB Type-C</h2>
+        
+            <span class="product__quantity2" id="quantity-117" >Кількість товару: <span class="quantity-value">Error</span></span>
+
+            <p class="product__price" id="productPrice">Цена: 319 ₴</p>
+            <div class="product__quantity"></div>
+            <button class="buy-button" 
+            data-sb-id-or-vendor-code="117"
+            data-sb-product-name="Walker C795 60w 3.3a USB Type-C"
+            data-sb-product-price="319"
+            data-sb-product-quantity="1"
+            data-sb-product-img="images/card/117.webp"
+            >Добавить в корзину</button>
+        </div>
+        <div class="product-card" data-id="118" data-name="USB кабель Walker C860, Type-C, 2м. White       ID:118" data-price="349" data-class="Кабель" data-image="images/card/118.webp" data-description="Зapяжaть гaджeты, coeдинять иx мeждy coбoй, co cтaциoнapными кoмпьютepaми, фoтo- и видeoкaмepaми, пepифepиeй пpиxoдитcя eжeднeвнo. Для пepeдaчи дaнныx пpeдycмoтpeны бecпpoвoдныe и пpoвoдныe пopты. Пocлeдниe ocнaщeны paзъeмaми oпpeдeлeннoгo фopмaтa.">
+            <img src="images/card/118.webp" class="product-image">
+            <h2>Walker C860, Type-C, 2.0 </h2>
+        
+            <span class="product__quantity2" id="quantity-118" >Кількість товару: <span class="quantity-value">Error</span></span>
+
+            <p class="product__price" id="productPrice">Цена: 349 ₴</p>
+            <div class="product__quantity"></div>
+            <button class="buy-button" 
+            data-sb-id-or-vendor-code="118"
+            data-sb-product-name="Walker C860, Type-C, 2.0"
+            data-sb-product-price="349"
+            data-sb-product-quantity="1"
+            data-sb-product-img="images/card/118.webp"
+            >Добавить в корзину</button>
+        </div>
+        <div class="product-card" data-id="119" data-name="МЗП Hoco C73A Glorious dual port charger set Lightning White       ID:119" data-price="259" data-class="Зарядное" data-image="images/card/119.webp" data-description="Мережний зарядний пристрій Hoco C73A Glorious 2 USB адаптер з кабелем MicroUSB 1м. — це зарядний пристрій для телефону, планшета або інших пристроїв.">
+            <img src="images/card/119.webp" class="product-image">
+            <h2>Hoco C73A Glorious dual port charger</h2>
+        
+            <span class="product__quantity2" id="quantity-119" >Кількість товару: <span class="quantity-value">Error</span></span>
+
+            <p class="product__price" id="productPrice">Цена: 259 ₴</p>
+            <div class="product__quantity"></div>
+            <button class="buy-button" 
+            data-sb-id-or-vendor-code="119"
+            data-sb-product-name="Hoco C73A Glorious dual port charger"
+            data-sb-product-price="259"
+            data-sb-product-quantity="1"
+            data-sb-product-img="images/card/119.webp"
+            >Добавить в корзину</button>
+        </div>
+        <div class="product-card" data-id="120" data-name="Кабель XO NB208 USB 1м. 2.4а. - MicroUSB Black      ID:120" data-price="199" data-class="Кабель" data-image="images/card/120.webp" data-description="Відмінно підходить для заряджання вашого пристрою. Дозволяє заряджати ваш гаджет від порту комп'ютера або зарядного пристрою. Також кабель має зручну довжину 1 метр, завдяки чому не буде дискомфорту під час передачі даних або зарядки.">
+            <img src="images/card/120.webp" class="product-image">
+            <h2>XO NB208 USB - MicroUSB</h2>
+        
+            <span class="product__quantity2" id="quantity-120" >Кількість товару: <span class="quantity-value">Error</span></span>
+
+            <p class="product__price" id="productPrice">Цена: 199 ₴</p>
+            <div class="product__quantity"></div>
+            <button class="buy-button" 
+            data-sb-id-or-vendor-code="120"
+            data-sb-product-name="XO NB208 USB - MicroUSB"
+            data-sb-product-price="199"
+            data-sb-product-quantity="1"
+            data-sb-product-img="images/card/120.webp"
+            >Добавить в корзину</button>
+        </div>
+        <div class="product-card" data-id="121" data-name="Кабель XO NB188 USB 1м. 2.4а. - MicroUSB Gray       ID:121" data-price="299" data-class="Кабель" data-image="images/card/121.webp" data-description="Високотехнологічний кабель для зарядки сумісних з ним гаджетів і їх синхронізації з комп'ютером. Дана модель вирізняється своєю надійністю і практичною реалізацією, що забезпечить їй тривалий термін служби, безпеку для сумісних з нею пристроїв та зручність в повсякденній експлуатації.">
+            <img src="images/card/121.webp" class="product-image">
+            <h2>XO NB188 USB - MicroUSB</h2>
+        
+            <span class="product__quantity2" id="quantity-121" >Кількість товару: <span class="quantity-value">Error</span></span>
+
+            <p class="product__price" id="productPrice">Цена: 299 ₴</p>
+            <div class="product__quantity"></div>
+            <button class="buy-button" 
+            data-sb-id-or-vendor-code="121"
+            data-sb-product-name="XO NB188 USB - MicroUSB"
+            data-sb-product-price="299"
+            data-sb-product-quantity="1"
+            data-sb-product-img="images/card/121.webp"
+            >Добавить в корзину</button>
+        </div>
+        <div class="product-card" data-id="122" data-name="USB XO NB-Q166 5A Lightning 5A 1m Black     ID:122" data-price="249" data-class="Кабель" data-image="images/card/122.webp" data-description="Високотехнологічний кабель для зарядки сумісних з ним гаджетів і їх синхронізації з комп'ютером. Дана модель вирізняється своєю надійністю і практичною реалізацією, що забезпечить їй тривалий термін служби, безпеку для сумісних з нею пристроїв та зручність в повсякденній експлуатації.">
+            <img src="images/card/122.webp" class="product-image">
+            <h2>XO NB-Q166 5A Lightning</h2>
+        
+            <span class="product__quantity2" id="quantity-122" >Кількість товару: <span class="quantity-value">Error</span></span>
+
+            <p class="product__price" id="productPrice">Цена: 249 ₴</p>
+            <div class="product__quantity"></div>
+            <button class="buy-button" 
+            data-sb-id-or-vendor-code="122"
+            data-sb-product-name="XO NB-Q166 5A Lightning"
+            data-sb-product-price="249"
+            data-sb-product-quantity="1"
+            data-sb-product-img="images/card/122.webp"
+            >Добавить в корзину</button>
+        </div>
+        <div class="product-card" data-id="123" data-name="USB XO NB-Q166 5A MicroUSB 5A 1m White      ID:123" data-price="219" data-class="Кабель" data-image="images/card/123.webp" data-description="Високотехнологічний кабель для зарядки сумісних з ним гаджетів і їх синхронізації з комп'ютером. Дана модель вирізняється своєю надійністю і практичною реалізацією, що забезпечить їй тривалий термін служби, безпеку для сумісних з нею пристроїв та зручність в повсякденній експлуатації.">
+            <img src="images/card/123.webp" class="product-image">
+            <h2>XO NB-Q166 5A MicroUSB</h2>
+        
+            <span class="product__quantity2" id="quantity-123" >Кількість товару: <span class="quantity-value">Error</span></span>
+
+            <p class="product__price" id="productPrice">Цена: 219 ₴</p>
+            <div class="product__quantity"></div>
+            <button class="buy-button" 
+            data-sb-id-or-vendor-code="123"
+            data-sb-product-name="XO NB-Q166 5A MicroUSB"
+            data-sb-product-price="219"
+            data-sb-product-quantity="1"
+            data-sb-product-img="images/card/123.webp"
+            >Добавить в корзину</button>
+        </div>
+        <div class="product-card" data-id="124" data-name="XO NB227 USB Type-C 6A 1,2м Black      ID:124" data-price="269" data-class="Кабель" data-image="images/card/124.webp" data-description="Відноситься до типу кабелі зарядні, для швидкої зарядки, синхро-зарядні. Він ідеально підходить для телефонів, для планшетів, якщо треба синхронізувати смартфон і персональний комп'ютер або ноутбук.">
+            <img src="images/card/124.webp" class="product-image">
+            <h2>XO NB227 USB Type-C</h2>
+        
+            <span class="product__quantity2" id="quantity-124" >Кількість товару: <span class="quantity-value">Error</span></span>
+
+            <p class="product__price" id="productPrice">Цена: 269 ₴</p>
+            <div class="product__quantity"></div>
+            <button class="buy-button" 
+            data-sb-id-or-vendor-code="124"
+            data-sb-product-name="XO NB227 USB Type-C"
+            data-sb-product-price="249"
+            data-sb-product-quantity="1"
+            data-sb-product-img="images/card/124.webp"
+            >Добавить в корзину</button>
+        </div>
+        <div class="product-card" data-id="125" data-name="XO NB208 USB Type-C 2.4A 1м. Black      ID:125" data-price="189" data-class="Кабель" data-image="images/card/125.webp" data-description="Це надійний, практичний аксесуар, який стане незамінним помічником для зарядки чи передачі даних з будь-яких телефонів, що містять цей вхід.">
+            <img src="images/card/125.webp" class="product-image">
+            <h2>XO NB208 USB - Type-C</h2>
+        
+            <span class="product__quantity2" id="quantity-125" >Кількість товару: <span class="quantity-value">Error</span></span>
+
+            <p class="product__price" id="productPrice">Цена: 189 ₴</p>
+            <div class="product__quantity"></div>
+            <button class="buy-button" 
+            data-sb-id-or-vendor-code="125"
+            data-sb-product-name="XO NB208 USB Type-C"
+            data-sb-product-price="189"
+            data-sb-product-quantity="1"
+            data-sb-product-img="images/card/125.webp"
+            >Добавить в корзину</button>
+        </div>
+        <div class="product-card" data-id="126" data-name="NB-Q189A PD 20W 2.4A 1м. Type-C - Lightning White      ID:126" data-price="299" data-class="Кабель" data-image="images/card/126.webp" data-description="Кабель відмінно підходить для зарядки нових моделей Apple iPhone починаючи з iPhone 8 та iPad, починаючи з iPad Pro. Головною особливістю даного кабелю є підтримка швидкого заряджання, яка реалізується при використанні швидкого заряджання USB-PD.">
+            <img src="images/card/126.webp" class="product-image">
+            <h2>NB-Q189A PD Type-C - Lightning</h2>
+        
+            <span class="product__quantity2" id="quantity-126" >Кількість товару: <span class="quantity-value">Error</span></span>
+
+            <p class="product__price" id="productPrice">Цена: 299 ₴</p>
+            <div class="product__quantity"></div>
+            <button class="buy-button" 
+            data-sb-id-or-vendor-code="126"
+            data-sb-product-name="NB-Q189A PD Type-C - Lightning"
+            data-sb-product-price="299"
+            data-sb-product-quantity="1"
+            data-sb-product-img="images/card/126.webp"
+            >Добавить в корзину</button>
+        </div>
+        <div class="product-card" data-id="127" data-name="Кабель XO NB-Q183A Type-C - Lightning 2.4A 1m Black      ID:127" data-price="329" data-class="Кабель" data-image="images/card/127.webp" data-description="Кабель відмінно підходить для зарядки нових моделей Apple iPhone починаючи з iPhone 8 та iPad, починаючи з iPad Pro. Головною особливістю даного кабелю є підтримка швидкого заряджання, яка реалізується при використанні швидкого заряджання USB-PD.">
+            <img src="images/card/127.webp" class="product-image">
+            <h2>XO NB-Q183A 2.4A Lightning</h2>
+        
+            <span class="product__quantity2" id="quantity-127" >Кількість товару: <span class="quantity-value">Error</span></span>
+
+            <p class="product__price" id="productPrice">Цена: 329 ₴</p>
+            <div class="product__quantity"></div>
+            <button class="buy-button" 
+            data-sb-id-or-vendor-code="127"
+            data-sb-product-name="XO NB-Q183A 2.4A Lightning"
+            data-sb-product-price="329"
+            data-sb-product-quantity="1"
+            data-sb-product-img="images/card/127.webp"
+            >Добавить в корзину</button>
+        </div>
+        <div class="product-card" data-id="128" data-name="Кабель USB XO NB143 3в1 Type-C+Micro+Lightning 1.2м 2.1A плетений Black+Red+Blue      ID:128" data-price="249" data-class="Кабель" data-image="images/card/128.webp" data-description="Призначений для з'єднання мобільних телефонів із сумісними пристроями для передачі даних або заряджання.">
+            <img src="images/card/128.webp" class="product-image">
+            <h2>XO NB143 3в1-Type-C + Micro+ Light.</h2>
+        
+            <span class="product__quantity2" id="quantity-128" >Кількість товару: <span class="quantity-value">Error</span></span>
+
+            <p class="product__price" id="productPrice">Цена: 249 ₴</p>
+            <div class="product__quantity"></div>
+            <button class="buy-button" 
+            data-sb-id-or-vendor-code="128"
+            data-sb-product-name="XO NB143 3в1 USB - Type-C+Micro+Lightning"
+            data-sb-product-price="249"
+            data-sb-product-quantity="1"
+            data-sb-product-img="images/card/128.webp"
+            >Добавить в корзину</button>
+        </div>
+        <div class="product-card" data-id="129" data-name="Кабель USB XO NB173 3в1 Type-C+Micro+Lightning 1.2м 2.1A плетений Black      ID:129" data-price="249" data-class="Кабель" data-image="images/card/129.webp" data-description="Призначений для з'єднання мобільних телефонів із сумісними пристроями для передачі даних або заряджання.">
+            <img src="images/card/129.webp" class="product-image">
+            <h2>XO NB173 3в1 - Type-C + Micro + Light.</h2>
+        
+            <span class="product__quantity2" id="quantity-129" >Кількість товару: <span class="quantity-value">Error</span></span>
+
+            <p class="product__price" id="productPrice">Цена: 249 ₴</p>
+            <div class="product__quantity"></div>
+            <button class="buy-button" 
+            data-sb-id-or-vendor-code="129"
+            data-sb-product-name="XO NB173 3в1 USB - Type-C+Micro+Lightning"
+            data-sb-product-price="249"
+            data-sb-product-quantity="1"
+            data-sb-product-img="images/card/129.webp"
+            >Добавить в корзину</button>
+        </div>
+        <div class="product-card" data-id="130" data-name="Кабель XO NB-Q183B Type-C - Type-C PD 60W 1м Fast Charge 3A Black      ID:130" data-price="349" data-class="Кабель" data-image="images/card/130.webp" data-description="Призначений для з'єднання мобільних телефонів із сумісними пристроями для передачі даних або заряджання.">
+            <img src="images/card/130.webp" class="product-image">
+            <h2>XO NB-Q183B Type-C</h2>
+        
+            <span class="product__quantity2" id="quantity-130" >Кількість товару: <span class="quantity-value">Error</span></span>
+
+            <p class="product__price" id="productPrice">Цена: 349 ₴</p>
+            <div class="product__quantity"></div>
+            <button class="buy-button" 
+            data-sb-id-or-vendor-code="130"
+            data-sb-product-name="XO NB-Q183B Type-C"
+            data-sb-product-price="349"
+            data-sb-product-quantity="1"
+            data-sb-product-img="images/card/130.webp"
+            >Добавить в корзину</button>
+        </div>
+        <div class="product-card" data-id="131" data-name="Кабель USB XO NB-Q190A Type-C - Type-C PD 60W 1м 3A Black      ID:131" data-price="299" data-class="Кабель" data-image="images/card/131.webp" data-description="Обплетення кабелю виконано з міцної, стійкої до розтягувань, перегинів та механічних пошкоджень TPE обплетення. Провід забезпечує швидку та надійну зарядку та передачу даних.">
+            <img src="images/card/131.webp" class="product-image">
+            <h2>XO NB-Q190A Type-C</h2>
+        
+            <span class="product__quantity2" id="quantity-131" >Кількість товару: <span class="quantity-value">Error</span></span>
+
+            <p class="product__price" id="productPrice">Цена: 299 ₴</p>
+            <div class="product__quantity"></div>
+            <button class="buy-button" 
+            data-sb-id-or-vendor-code="131"
+            data-sb-product-name="XO NB-Q190A Type-C"
+            data-sb-product-price="299"
+            data-sb-product-quantity="1"
+            data-sb-product-img="images/card/131.webp"
             >Добавить в корзину</button>
         </div>
 
 
-
+        
     </div>
+    
     
 </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
+    <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
 
 
     <footer class="footer">
         <div class="footer-content">
           <div class="footer-section contact-info">
             <h3>Контактная информация</h3>
-            <p>Email: my.gadget.sale.info@gmail.com</p>
-            <p>Адрес: Украина</p>
+            <a href="mailto:my.gadget.sale.info@gmail.com">Email: my.gadget.sale.info@gmail.com</a>
+            <a href="tel:+380974627358">Номер: +380 97 462 73 58</a>
+            <!-- Добавляем график работы -->
+            <h4>График работы:</h4>
+            <p>9:00 - 18:00</p>
+
+            
           </div>
           <div class="footer-section terms">
             <h3>Пользовательское соглашение</h3>
-            <p><a href="#">Условия использования</a></p>
-            <p><a href="#">Политика конфиденциальности</a></p>
+            <p><a href="#">Гарантія та повернення товару</a></p>
+            <p><a href="Public-offer.html" target="_blank">Публічна оферта</a></p>
           </div>
         </div>
         <div class="footer-bottom">
-          &copy; 2024 GadgetSale | Все права защищены.
+          &copy; 2024 GadgetSale | Всі права захищені.
         </div>
       </footer>
       
       
+<div id="paymentModal" class="modal">
+    <div class="modal-content">
+        <span class="close-payment-modal">&times;</span>
+        <h2>Виберіть спосіб оплати</h2>
+        <button class="payment-option" data-method="now">Оплатіть зараз</button>
+        <button class="payment-option" data-method="on-delivery">Оплата при отриманні</button>
+    </div>
+</div>
 
 <!-- Модальное окно -->
 <div class="modal" id="productModal">
@@ -201,5 +647,6 @@
 		});
 	</script>
     <script src="js/script_main.js"></script>
+    
 </body>
 </html>

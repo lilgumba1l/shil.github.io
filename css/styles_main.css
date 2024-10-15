@@ -47,7 +47,7 @@ body {
 
 
 .cart-button {
-    background-color: #aa8110;
+    background-color: #757575;
     color: white;
     border: none;
     border-radius: 50%; /* Круглая кнопка */
@@ -127,7 +127,15 @@ margin-top: 100px;
     max-width: 100%; /* Убедитесь, что контейнеры не превышают ширину экрана */
 
 }
+.content2 {
+    padding: 40px;
+    text-align: center;
+  
+    gap: 20px;   
+    position: relative;
+    max-width: 100%; /* Убедитесь, что контейнеры не превышают ширину экрана */
 
+}
 h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
@@ -181,6 +189,43 @@ nav-down: 6;
     flex: 0 0 80%;                    /* Список товаров занимает 70% ширины */
     padding: 10px;                    /* Отступы для внутреннего содержимого */
 }
+#productList2 {
+    gap: 20px;               /* Расстояние между карточками товаров */
+    background-color: #202020;
+    border-radius: 25px; /* Круглая форма */
+    flex: 0 0 80%;                    /* Список товаров занимает 70% ширины */
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center; /* Центрирование по вертикали */
+    text-align: start; /* Центрирование текста */
+    padding: 10px;                    /* Отступы для внутреннего содержимого */
+}
+#productList2 h4 {
+    font-size: 1.4rem;
+    color: whitesmoke;
+}
+#productList2 h3 {
+    font-size: 1rem;
+    color: antiquewhite;
+}
+@media (max-width:850px){
+    #productList2 h4 {
+        font-size: 1rem;
+        color: whitesmoke;
+    }
+    #productList2 h3 {
+        font-size: 0.7rem;
+        color: antiquewhite;
+    }
+}
+a {
+  color: #00aaff; /* Голубой цвет для ссылки */
+  text-decoration: none; /* Убирает подчеркивание, если нужно */
+}
+
+a:hover {
+  color: #0088cc; /* Цвет при наведении (опционально) */
+}
+
 .productsearchlist{
     background-color: #202020;
     border-radius: 25px; /* Круглая форма */
@@ -218,11 +263,11 @@ nav-down: 6;
 }
 
 .product-card {
-    max-width: 300px;
-    max-height: 530px;
+
+
+    
     border: 1px solid #ccc;  /* Добавим границу для наглядности */
     padding: 10px;
-    border-radius: 5px;
     text-align: center;      /* Центрируем текст внутри карточек */
     box-sizing: border-box;  /* Включаем padding в общую ширину */
 }
@@ -233,9 +278,10 @@ nav-down: 6;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    width: 300px;
+    width: 20%;
     margin: 20px;
-    height: 530px;
+    
+    height: auto;
     transition: transform 0.3s;
 }
 
@@ -245,6 +291,7 @@ nav-down: 6;
 
 .product-image {
     width: 100%;
+    border-radius: 10px;
     height: auto;
 }
 
@@ -482,7 +529,16 @@ nav-down: 6;
     font-size: 14px;
     margin-top: 10px;
   }
-  
+
+    /* Адаптация для мобильных устройств */
+    @media (max-width: 1440px) {
+        .product-card {
+            max-width: 260px;
+            
+            width: 25%;
+            max-height: 480px;
+        }
+      }
   /* Адаптация для мобильных устройств */
   @media (max-width: 768px) {
     .footer-content {
@@ -515,9 +571,9 @@ nav-down: 6;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         overflow: hidden;
-        width: 125px;
+        width: 145px;
         margin: 10px;
-        height: 330px;
+        height: 380px;
         transition: transform 0.3s;
     }
     h2 {
@@ -604,6 +660,13 @@ nav-down: 6;
         gap: 10px;               /* Расстояние между карточками товаров */
         padding: 5px;                    /* Отступы для внутреннего содержимого */
     }
+    #productList2{
+        flex: 0 0 100%;                    /* Список товаров занимает 70% ширины */
+        display: flex;           /* Используем flexbox для горизонтального выравнивания */
+        flex-wrap: wrap;         /* Чтобы товары переносились на новую строку при нехватке места */
+        gap: 10px;               /* Расстояние между карточками товаров */
+        padding: 5px;                    /* Отступы для внутреннего содержимого */
+    }
     .productsearchlist{
         display: none;
         position: absolute;
@@ -614,13 +677,19 @@ nav-down: 6;
     }
 }
 /* Для мобильных устройств */
-@media (max-width: 320px) {
+@media (max-width: 375px) {
     .productList {
       width: 100%; /* Занимаем всю ширину экрана */
       margin: 0; /* Убираем внешние отступы */
       padding: 0; /* Убираем внутренние отступы */
     }
-  
+    .productList2 {
+        width: 100%; /* Занимаем всю ширину экрана */
+        margin: 0; /* Убираем внешние отступы */
+        padding: 0; /* Убираем внутренние отступы */
+        
+      }
+    
     .product-card {
       width: 100%; /* Каждая карточка продукта также на всю ширину */
       margin: 0; /* Убираем внешние отступы между карточками */
@@ -630,3 +699,50 @@ nav-down: 6;
     }
   }
   
+  .modal {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    padding-top: 500px;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin: 15% auto;
+    transform: translate(-50%, -110%); /* Центрируем модальное окно */
+    padding: 20px;
+    background: white;
+    width: 80%;
+    max-width: 900px;
+    border-radius: 10px;
+}
+
+.close-payment-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.payment-option {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.payment-option:hover {
+    background-color: #45a049;
+}
+
+
